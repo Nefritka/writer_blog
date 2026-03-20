@@ -1,0 +1,36 @@
+[latestStories]
+other = "Najnovšie príbehy"
+
+[allStories]
+other = "Všetky príbehy"
+
+[readMore]
+other = "Čítať ďalej"
+
+[readingTime]
+one = "{{ .Count }} min čítania"
+other = "{{ .Count }} min čítania"
+
+[comments]
+other = "Komentáre"
+
+[allRightsReserved]
+other = "Všetky práva vyhradené."
+
+[pagination]
+other = "Stránkovanie"
+
+[previousPage]
+other = "Predchádzajúca stránka"
+
+[nextPage]
+other = "Nasledujúca stránka"
+
+[postedIn]
+other = "Kategória"
+
+[taggedWith]
+other = "Značky"
+
+[noPostsFound]
+other = "Žiadne príbehy neboli nájdené."

@@ -1,0 +1,22 @@
+<article class="story-card">
+  <a href="{{ .RelPermalink }}" class="story-card-link">
+    {{ with .Params.thumbnail }}
+    <div class="story-card-image">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+    </div>
+    {{ end }}
+    <div class="story-card-content">
+      {{ with .Params.categories }}
+      <span class="story-card-category">{{ index . 0 }}</span>
+      {{ end }}
+      <h3 class="story-card-title">{{ .Title }}</h3>
+      <p class="story-card-excerpt">
+        {{ with .Params.excerpt }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+      </p>
+      <div class="story-card-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
+        <span class="reading-time">{{ i18n "readingTime" (dict "Count" .ReadingTime) }}</span>
+      </div>
+    </div>
+  </a>
+</article>

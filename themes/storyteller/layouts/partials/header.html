@@ -1,0 +1,28 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="{{ .Site.Home.RelPermalink }}" class="site-logo">
+      {{ .Site.Title }}
+    </a>
+
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" role="navigation">
+      <ul class="nav-links">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+      <div class="lang-switcher">
+        {{ range .Site.Languages }}
+        {{ if eq $.Lang .Lang }}
+        <span class="lang-current">{{ .LanguageName }}</span>
+        {{ else }}
+        <a href="{{ .Lang | relLangURL }}/" class="lang-link">{{ .LanguageName }}</a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </nav>
+  </div>
+</header>

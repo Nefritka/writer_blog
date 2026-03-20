@@ -1,0 +1,14 @@
+{{ with .Site.Params.cusdis }}
+<section class="comments" id="comments">
+  <h2>{{ i18n "comments" }}</h2>
+  <div id="cusdis_thread"
+    data-host="{{ .host }}"
+    data-app-id="{{ .appId }}"
+    data-page-id="{{ $.RelPermalink }}"
+    data-page-url="{{ $.Permalink }}"
+    data-page-title="{{ $.Title }}"
+    data-theme="light"
+  ></div>
+  <script async defer src="{{ .host }}/js/cusdis.es.js"></script>
+</section>
+{{ end }}

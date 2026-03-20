@@ -1,0 +1,59 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  branch: main
+  base_url: https://YOUR_AUTH_WORKER.workers.dev
+
+media_folder: static/images
+public_folder: /images
+
+locale: sk
+
+collections:
+  - name: posts-sk
+    label: "Príbehy (SK)"
+    folder: content/sk/posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nadpis", name: title, widget: string }
+      - { label: "Dátum", name: date, widget: datetime }
+      - { label: "Kategórie", name: categories, widget: list, default: [] }
+      - { label: "Značky", name: tags, widget: list, default: [] }
+      - { label: "Náhľadový obrázok", name: thumbnail, widget: image, required: false }
+      - { label: "Úryvok", name: excerpt, widget: text, required: false }
+      - { label: "Obsah", name: body, widget: markdown }
+
+  - name: posts-en
+    label: "Stories (EN)"
+    folder: content/en/posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Date", name: date, widget: datetime }
+      - { label: "Categories", name: categories, widget: list, default: [] }
+      - { label: "Tags", name: tags, widget: list, default: [] }
+      - { label: "Thumbnail", name: thumbnail, widget: image, required: false }
+      - { label: "Excerpt", name: excerpt, widget: text, required: false }
+      - { label: "Body", name: body, widget: markdown }
+
+  - name: pages-sk
+    label: "Stránky (SK)"
+    files:
+      - label: "O autorovi"
+        name: about-sk
+        file: content/sk/about/_index.md
+        fields:
+          - { label: "Nadpis", name: title, widget: string }
+          - { label: "Obsah", name: body, widget: markdown }
+
+  - name: pages-en
+    label: "Pages (EN)"
+    files:
+      - label: "About"
+        name: about-en
+        file: content/en/about/_index.md
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Body", name: body, widget: markdown }

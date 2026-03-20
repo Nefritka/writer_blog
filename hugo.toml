@@ -1,0 +1,73 @@
+baseURL = "https://example.com/"
+title = "Príbehy a poviedky"
+theme = "storyteller"
+defaultContentLanguage = "sk"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+[pagination]
+  pagerSize = 6
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  author = "Autor"
+  description = "Krátke príbehy a poviedky pre každého"
+  logo = ""
+  readingSpeed = 200
+
+  [params.cusdis]
+    host = "https://cusdis.com"
+    appId = "YOUR_CUSDIS_APP_ID"
+
+[languages]
+  [languages.sk]
+    languageName = "Slovenčina"
+    languageCode = "sk"
+    contentDir = "content/sk"
+    weight = 1
+    title = "Príbehy a poviedky"
+    [languages.sk.params]
+      description = "Krátke príbehy a poviedky pre každého"
+
+  [languages.en]
+    languageName = "English"
+    languageCode = "en"
+    contentDir = "content/en"
+    weight = 2
+    title = "Stories & Tales"
+    [languages.en.params]
+      description = "Short stories and tales for everyone"
+
+[menus]
+  [[menus.sk]]
+    name = "Domov"
+    url = "/sk/"
+    weight = 1
+  [[menus.sk]]
+    name = "Príbehy"
+    url = "/sk/posts/"
+    weight = 2
+  [[menus.sk]]
+    name = "O autorovi"
+    url = "/sk/about/"
+    weight = 3
+
+  [[menus.en]]
+    name = "Home"
+    url = "/en/"
+    weight = 1
+  [[menus.en]]
+    name = "Stories"
+    url = "/en/posts/"
+    weight = 2
+  [[menus.en]]
+    name = "About"
+    url = "/en/about/"
+    weight = 3

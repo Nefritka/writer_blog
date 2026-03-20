@@ -1,0 +1,36 @@
+[latestStories]
+other = "Latest Stories"
+
+[allStories]
+other = "All Stories"
+
+[readMore]
+other = "Read more"
+
+[readingTime]
+one = "{{ .Count }} min read"
+other = "{{ .Count }} min read"
+
+[comments]
+other = "Comments"
+
+[allRightsReserved]
+other = "All rights reserved."
+
+[pagination]
+other = "Pagination"
+
+[previousPage]
+other = "Previous page"
+
+[nextPage]
+other = "Next page"
+
+[postedIn]
+other = "Category"
+
+[taggedWith]
+other = "Tags"
+
+[noPostsFound]
+other = "No stories found."

@@ -1,0 +1,38 @@
+{{ define "main" }}
+<article class="story container">
+  <header class="story-header">
+    {{ with .Params.categories }}
+    <div class="story-categories">
+      {{ range . }}
+      <a href="{{ "categories/" | relLangURL }}{{ . | urlize }}/" class="category-badge">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+    <h1 class="story-title">{{ .Title }}</h1>
+    <div class="story-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+      <span class="reading-time">{{ i18n "readingTime" (dict "Count" .ReadingTime) }}</span>
+    </div>
+  </header>
+
+  {{ with .Params.thumbnail }}
+  <figure class="story-thumbnail">
+    <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+  </figure>
+  {{ end }}
+
+  <div class="story-body">
+    {{ .Content }}
+  </div>
+
+  {{ with .GetTerms "tags" }}
+  <footer class="story-tags">
+    {{ range . }}
+    <a href="{{ .RelPermalink }}" class="tag">{{ .LinkTitle }}</a>
+    {{ end }}
+  </footer>
+  {{ end }}
+
+  {{ partial "comments.html" . }}
+</article>
+{{ end }}

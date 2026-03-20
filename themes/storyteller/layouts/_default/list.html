@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="page-header">
+  <div class="container">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-description">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="page-content">{{ . }}</div>{{ end }}
+  </div>
+</section>
+
+{{ if eq .Kind "taxonomy" }}
+<section class="category-list container">
+  <div class="story-grid">
+    {{ range .Pages }}
+      {{ partial "story-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ else if eq .Kind "term" }}
+<section class="category-stories container">
+  <div class="story-grid">
+    {{ range .Pages }}
+      {{ partial "story-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ else }}
+<section class="story-list container">
+  <div class="story-grid">
+    {{ range .Paginator.Pages }}
+      {{ partial "story-card.html" . }}
+    {{ end }}
+  </div>
+  {{ partial "pagination.html" . }}
+</section>
+{{ end }}
+{{ end }}

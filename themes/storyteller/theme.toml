@@ -1,0 +1,13 @@
+name = "Storyteller"
+license = "MIT"
+licenselink = ""
+description = "A warm, cozy, storybook-inspired Hugo theme"
+
+[author]
+  name = ""
+  homepage = ""
+
+[original]
+  name = ""
+  homepage = ""
+  repo = ""
