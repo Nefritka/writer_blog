@@ -24,7 +24,7 @@ enableRobotsTXT = true
 
   [params.cusdis]
     host = "https://cusdis.com"
-    appId = "YOUR_CUSDIS_APP_ID"
+    appId = "a9a760ac-7f82-4d99-bd50-4c1ad5a48ea9"
 
 [languages]
   [languages.sk]
